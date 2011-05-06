@@ -1,0 +1,16 @@
+<component-set>
+  <components>
+    <component>
+      <role>org.apache.maven.doxia.parser.Parser</role>
+      <role-hint>markdown</role-hint>
+      <implementation>org.apache.maven.doxia.module.markdown.MarkdownParser</implementation>
+      <description>Parser for the Markdown syntax.</description>
+      <!--<requirements>
+        <requirement>
+          <role>org.apache.maven.doxia.macro.manager.MacroManager</role>
+          <field-name>macroManager</field-name>
+        </requirement>
+      </requirements>-->
+    </component>
+  </components>
+</component-set>

@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-modules</artifactId>
+		<version>1.1.4</version> <!-- Latest release -->
+	</parent>
+
+	<artifactId>doxia-module-markdown</artifactId>
+	<!-- cannot find doxia...<version>0.1-SNAPSHOT</version>-->
+
+	<name>Doxia :: Markdown module</name>
+	<description>A Doxia module for Markdown source documents.
+	</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<developers>
+		<developer>
+			<id>rds</id>
+			<name>Régis Décamps</name>
+			<email>decamps@users.sf.net</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!--  first release, there is no previous code to compare with. -->
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>clirr-maven-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnerror>false</failOnerror>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.plexus</groupId>
+				<artifactId>plexus-maven-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/components/components.xml</descriptor>
+						<descriptor>target/generated-resources/plexus/META-INF/plexus/components.xml
+						</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>merge-descriptors</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
