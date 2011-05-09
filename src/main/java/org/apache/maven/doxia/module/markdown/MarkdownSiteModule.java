@@ -12,7 +12,7 @@ import org.apache.maven.doxia.module.site.AbstractSiteModule;
  */
 public class MarkdownSiteModule extends AbstractSiteModule {
 	public MarkdownSiteModule() {
-		super("markdown", "txt", "markdown");
+		super("markdown", "md", "markdown");
 		System.out.println("Loading Markdown site plugin");
 	}
 }
